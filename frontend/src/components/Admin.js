@@ -9,7 +9,7 @@ const Admin = () => {
   const fetchPhones = async () => {
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.get('http://localhost:5000/get-phones', {
+      const response = await axios.get('https://backend-exchange.vercel.app/get-phones', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setPhones(response.data);
@@ -30,7 +30,7 @@ const Admin = () => {
 
     try {
       const token = localStorage.getItem('authToken');
-      await axios.post('http://localhost:5000/save-phone', { phoneNumber, whatsappLink }, {
+      await axios.post('https://backend-exchange.vercel.app/save-phone', { phoneNumber, whatsappLink }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setMessage('Phone number and WhatsApp link saved successfully!');
