@@ -14,7 +14,10 @@ const app = express();
 const port = 5000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: '*', // Allows all origins
+  methods: ['GET', 'POST'], // Allows only GET and POST requests
+}))
 app.use(bodyParser.json());
 
 // Define Phone Number Schema
