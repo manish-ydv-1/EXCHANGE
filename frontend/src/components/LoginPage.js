@@ -16,7 +16,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/login', { username, password });
+      const response = await axios.post('https://backend-exchange.vercel.app/login', { username, password });
 
       if (response.data.token) {
         localStorage.setItem('authToken', response.data.token);
