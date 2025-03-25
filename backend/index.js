@@ -15,9 +15,12 @@ const port = 5000;
 
 // Middleware
 app.use(cors({
-  origin: '*', // Allows all origins
-  methods: ['GET', 'POST'], // Allows only GET and POST requests
-}))
+  origin: 'https://f-exchange.vercel.app', // Allow only this origin
+  methods: ['GET', 'POST'], // Allow only GET and POST requests
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
+}));
+
+// Body parser middleware
 app.use(bodyParser.json());
 
 // Define Phone Number Schema
@@ -28,7 +31,7 @@ const phoneSchema = new mongoose.Schema({
 
 const Phone = mongoose.model('Phone', phoneSchema);
 
-// Define User Schema for Login (This is no longer needed but kept for reference)
+// Define User Schema for Login
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
@@ -56,7 +59,7 @@ const authenticate = (req, res, next) => {
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
-  // Hardcoded username and password
+  // Hardcoded username and password for testing
   const validUsername = 'mk@gmail.com';
   const validPassword = '123456789';
 
