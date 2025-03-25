@@ -15,7 +15,7 @@ const port = 5000;
 
 // Middleware
 app.use(cors({
-  origin: 'https://f-exchange.vercel.app', // Allow only this origin
+  origin: '*', // Allow only this origin
   methods: ['GET', 'POST'], // Allow only GET and POST requests
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
 }));
