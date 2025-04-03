@@ -16,7 +16,7 @@ const port = 5000;
 // Middleware
 app.use(cors({
   origin: '*', // Allow only this origin
-  methods: ['GET', 'POST'], // Allow only GET and POST requests
+  methods: ['GET', 'POST', 'OPTIONS'], // Allow GET, POST, and OPTIONS requests
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
 }));
 
