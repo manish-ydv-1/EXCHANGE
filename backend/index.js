@@ -15,9 +15,9 @@ const port = 5000;
 
 // Middleware
 app.use(cors({
-  origin: '*', // Allow only this origin
-  methods: ['GET', 'POST', 'OPTIONS'], // Allow GET, POST, and OPTIONS requests
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
+  origin: 'https://f-exchange.vercel.app',  // Allow only this origin
+  // methods: ['GET', 'POST', 'OPTIONS'], // Allow GET, POST, and OPTIONS requests
+  // allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
 }));
 
 // Body parser middleware
